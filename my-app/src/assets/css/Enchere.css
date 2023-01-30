@@ -1,0 +1,36 @@
+.container {
+    padding: 5px;
+    display: grid;
+    background-color: darkgray;
+    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin: 100px;
+}
+
+.item-cont{
+    margin: 5px;
+    background-color: blue;
+    gap: 5px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.item-it{
+    background-color: brown;
+}
+
+.item{
+    background-color: black;
+    color: white;
+}
+
+
+.item:nth-last-of-type(2){
+    grid-column: 1/3;
+}
+
+.item:nth-last-of-type(1){
+    grid-column: 3/5;
+}
+
