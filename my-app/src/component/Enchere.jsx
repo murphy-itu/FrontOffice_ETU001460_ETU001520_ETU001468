@@ -6,14 +6,14 @@ class Enchere extends Component {
     render() {
         return (
             <div class="container" >
-                <div class="item item-cont" >
+                {/* <div class="item item-cont" >
                     {
                         this.enchere.photo.map((photo,index) =>
                             <div class="item-it"><img key={photo.id} src={"data:image/jpeg;base64,"+photo.base64} /></div>
                             
                         )
                     }
-                </div>
+                </div> */}
                 <div class="item" >
                     <div>
                         <h1>{this.enchere.produit.nom}</h1>
