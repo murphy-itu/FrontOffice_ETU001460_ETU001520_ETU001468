@@ -48,8 +48,8 @@ const navigate = useNavigate();
           .then((resultat)=>{
             console.log(resultat.token+" mandeha");            
            // setEnchere(resultat.data);
-           sessionStorage.setItem('iduser',JSON.stringify(resultat.id))
-           sessionStorage.setItem('token',JSON.stringify(resultat.token));  
+           sessionStorage.setItem('iduser',JSON.stringify(resultat.utilisateurid))
+           sessionStorage.setItem('token',resultat.token);  
            navigate ("/insertMise/"+idenchere);
            
           });

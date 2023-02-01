@@ -37,13 +37,16 @@ const insertMise = () =>{
        log.append("motdepasse",this.state.password);
        console.log(log.get("email"));*/
 console.log(mise+" - "+sessionStorage.getItem('token'));
-
+        console.log(sessionStorage.getItem('iduser'));
        fetch("http://localhost:8082/Enchere/rencherir/",
        {
            method:"POST",
-                   headers:  { 'token':sessionStorage.getItem('token').toString(),
-               'Content-Type':'application/json'},
-
+           headers:  { 
+               'Accept':'application/json',
+               'Access-Control-Allow-Origin': '*',
+               'Content-Type':'application/json',
+               'token':`${sessionStorage.getItem('token').toString()}`},
+            
             body: JSON.stringify({
                 "montant":mise,
                 "utilisateur":{
