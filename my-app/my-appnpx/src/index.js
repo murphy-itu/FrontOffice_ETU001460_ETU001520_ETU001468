@@ -7,6 +7,9 @@ import reportWebVitals from './reportWebVitals';
 import Enchere from './component/Enchere'
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Login from './component/Login';
+import InsertMise from './component/InsertMise';
 
 
 //  enchere = [
@@ -101,6 +104,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 function GetEnchere() {
   const [enchere,setEnchere] = useState([]);
   useEffect(() => {
+    
   fetch("http://localhost:8082/Enchere/Enchere",
     {
       method:"GET"
@@ -116,13 +120,23 @@ function GetEnchere() {
   return (
   enchere.map((e,index) => {
     return <Enchere key={index} enchere={e} />
-    
   })
   )
 }
 
-root.render (  
-  < GetEnchere />
+// root.render (  
+//   < GetEnchere />
+// );
+
+root.render(
+  <BrowserRouter>
+    <Routes>
+      <Route path={"/"} element={<GetEnchere/>}></Route>
+      <Route path={"/login/:idenchere"} element={<Login />}></Route>
+      <Route path={"/insertMise/:idenchere"} element={<InsertMise />}></Route>
+      <Route path={"/login"} element={<Login valia="lolo"/>}></Route>
+    </Routes>
+  </BrowserRouter>
 );
 
 
