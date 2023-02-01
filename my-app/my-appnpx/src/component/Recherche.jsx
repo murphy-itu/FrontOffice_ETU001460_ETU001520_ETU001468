@@ -1,30 +1,43 @@
-import { Component } from "react";
+import { Component, useState } from "react";
 import '../assets/css/Enchere.css';
-import { useHistory } from "react-router-dom";
-class Recherche extends Component {
-    constuctor() {
-        this.faireRedirection = this.faireRedirection.bind(this);
-      }
-    
-      faireRedirection() {
-        let url = "maNouvelleURL";
-        this.props.history.push(url);
-      }
-    enchere = this.props.enchere;  
-    utilisateur = this.props.utilisateur;
-    render() {
+import { useHistory, useParams } from "react-router-dom";
+export default function Recherche () {
+
+    const [password,setPassword] =useState("");
+    const { idenchere } = useParams("idenchere");
+
+    const submit = () =>{
+        //   console.log(thijgds.state.email+" "+this.state.password);        
+         //  console.log(this.state.email);
+        /*   log.append("email",this.state.email);
+           log.append("motdepasse",this.state.password);
+           console.log(log.get("email"));*/
+   
+           fetch("http://localhost:8082/utilisateur/liste",
+           {
+               method:"POST",
+               headers : {"Content-Type":"application/json"},
+             } ) 
+             .then((res)=> res.json())
+             .then((resultat)=>{
+               console.log(resultat.token+" mandeha");            
+              // setEnchere(resultat.data);
+              sessionStorage.setItem('iduser',JSON.stringify(resultat.utilisateurid))
+              sessionStorage.setItem('token',resultat.token);  
+            //  navigate ("/insertMise/"+idenchere);
+              
+             });
+             }
+       
         return (
             <div class="container" >
                 <div class="item item-cont" >                   
                 </div>
                 <div class="item" >
                     <div>                       
-                    
+                    <input name=""/>
                     </div>
                 </div>
             </div>
         )
     }
-}
-
-export default Recherche;

@@ -136,7 +136,7 @@ root.render(
       <Route path={"/login/:idenchere"} element={<Login />}></Route>
       <Route path={"/insertMise/:idenchere"} element={<InsertMise />}></Route>
       <Route path={"/login"} element={<Login valia="lolo"/>}></Route>
-      <Route path={"/Recherche/"} element={<Recherche valia="lolo"/>}></Route>
+      <Route path={"/Recherche/:idenchere/:utilisateur"} element={<Recherche/>}></Route>
     </Routes>
   </BrowserRouter>
 );

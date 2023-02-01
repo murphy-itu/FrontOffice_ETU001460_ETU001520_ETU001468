@@ -31,7 +31,7 @@ export default function Login() {
 */
 const navigate = useNavigate();
     const submit = () =>{
-     //   console.log(this.state.email+" "+this.state.password);        
+     //   console.log(thijgds.state.email+" "+this.state.password);        
       //  console.log(this.state.email);
      /*   log.append("email",this.state.email);
         log.append("motdepasse",this.state.password);
@@ -61,7 +61,7 @@ const navigate = useNavigate();
                     <Loading/>
                 ):(
                     <div>
-                        <h3>Login </h3>
+                        <h3> Login </h3>
                         <input type="text" value={email} onChange={(event)=>setEmail(event.target.value)} name="email"/>
                         <input type="password" name="password" value={password} onChange={(event)=>setPassword(event.target.value)} />
                         <button onClick={()=>submit()}>Login</button>

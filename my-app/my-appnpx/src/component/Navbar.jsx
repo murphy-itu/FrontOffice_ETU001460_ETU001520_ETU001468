@@ -21,7 +21,8 @@ class Navbar extends Component {
                 </div>
                 <div class="item" >
                     <div>                       
-                    <p><a href="/Recherche">Recherche</a></p>        
+                    <p><a href={"/Recherche/"+this.enchere+"/"+this.utilisateur} >Recherche</a></p>        
+                    <p><a href={"/Recherche/"+this.enchere} >Historique</a></p>        
                     </div>
                 </div>
             </div>

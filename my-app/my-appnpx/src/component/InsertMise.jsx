@@ -97,7 +97,7 @@ const [enchere,setEnchere] = useState([]);
         },[])
     
         return (<div>
-                <Navbar enchere={enchere} utilisateur={sessionStorage.getItem('iduser')}/>
+                <Navbar enchere={idenchere} utilisateur={sessionStorage.getItem('iduser')}/>
                  <h3>Somme : </h3>
                  <input type="text" value={mise} onChange={(event)=>setMise(event.target.value)} name="email"/>                 
                  <button onClick={()=>insertMise()}>Encherir</button>
