@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Component } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Loading } from "./loading";
+import Navbar from "./Navbar";
 var loading=false;
 
 export default function InsertMise() {
@@ -96,7 +97,7 @@ const [enchere,setEnchere] = useState([]);
         },[])
     
         return (<div>
-            
+                <Navbar enchere={enchere} utilisateur={sessionStorage.getItem('iduser')}/>
                  <h3>Somme : </h3>
                  <input type="text" value={mise} onChange={(event)=>setMise(event.target.value)} name="email"/>                 
                  <button onClick={()=>insertMise()}>Encherir</button>

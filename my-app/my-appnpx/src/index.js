@@ -10,6 +10,7 @@ import { useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './component/Login';
 import InsertMise from './component/InsertMise';
+import Recherche from './component/Recherche';
 
 
 //  enchere = [
@@ -135,6 +136,7 @@ root.render(
       <Route path={"/login/:idenchere"} element={<Login />}></Route>
       <Route path={"/insertMise/:idenchere"} element={<InsertMise />}></Route>
       <Route path={"/login"} element={<Login valia="lolo"/>}></Route>
+      <Route path={"/Recherche/"} element={<Recherche valia="lolo"/>}></Route>
     </Routes>
   </BrowserRouter>
 );

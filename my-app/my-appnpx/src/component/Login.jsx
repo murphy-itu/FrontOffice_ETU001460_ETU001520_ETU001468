@@ -37,7 +37,6 @@ const navigate = useNavigate();
         log.append("motdepasse",this.state.password);
         console.log(log.get("email"));*/
 
-
         fetch("http://localhost:8082/utilisateur/login",
         {
             method:"POST",
