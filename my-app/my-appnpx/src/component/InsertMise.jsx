@@ -65,6 +65,42 @@ console.log(mise+" - "+sessionStorage.getItem('token'));
          });
          }        
 
+
+
+         
+const DetailsEnchere = () =>{
+    //   console.log(this.state.email+" "+this.state.password);        
+     //  console.log(this.state.email);
+    /*   log.append("email",this.state.email);
+       log.append("motdepasse",this.state.password);
+       console.log(log.get("email"));*/
+console.log(mise+" - "+sessionStorage.getItem('token'));
+        console.log(sessionStorage.getItem('iduser'));
+       fetch("http://localhost:8082/Enchere/rencherir/",
+       {
+           method:"POST",
+           headers:  { 
+               'Accept':'application/json',
+               'Access-Control-Allow-Origin': '*',
+               'Content-Type':'application/json',
+               'token':`${sessionStorage.getItem('token').toString()}`},
+            
+            body: JSON.stringify({
+                "montant":mise,
+                "utilisateur":{
+                    "id":sessionStorage.getItem('iduser')
+                },
+                "enchere":idenchere,
+                "etat":1
+                    })
+         } ) 
+         .then((res)=> res.json())
+         .then((resultat)=>{
+           console.log(resultat+" mandeha"); 
+           setEnchere(resultat);           
+          // setEnchere(resultat.data);
+         });
+         }        
 const [enchere,setEnchere] = useState([]);
   /*  const submit = () =>{
      //   console.log(this.state.email+" "+this.state.password);        
