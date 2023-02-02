@@ -53,7 +53,7 @@ console.log(mise+" - "+sessionStorage.getItem('token'));
                 "utilisateur":{
                     "id":sessionStorage.getItem('iduser')
                 },
-                "enchere":idenchere,
+                "enchere":{"id":idenchere},
                 "etat":1
                     })
          } ) 
