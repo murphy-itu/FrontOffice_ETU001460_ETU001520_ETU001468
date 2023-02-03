@@ -2,6 +2,15 @@ import { Component, useState,useEffect } from "react";
 import '../assets/css/Enchere.css';
 import { useHistory, useParams } from "react-router-dom";
 import Navbar from "./Navbar";
+
+import '../assets/css/Enchere.css';
+import '../assets/assets/css/app.css';
+import '../assets/assets/css/Login-Form-Clean.css';
+import '../assets/assets/bootstrap/css/bootstrap.min.css';
+import '../assets/assets/css/Login-Form-Clean.css';
+import '../assets/assets/css/MUSA_input-helper.css';
+import '../assets/assets/bootstrap/js/bootstrap.min.js';
+
 export default function Historique () {
 
     const [historique,setHistorique] =useState([]);
@@ -42,9 +51,30 @@ export default function Historique () {
         
        
         return (
-            <div>
-               <h1>Historique de mes encheres </h1>
+            
+            <div> <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-light navbar-custom">
+            <a class="navbar-brand" href="#">GEtit</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarResponsive"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="/">Log Out</a></li>
+                    </ul>
+                </div>
+           
+        </nav>
+                  <section>
+    <div class="bg-circle-1 bg-circle">
+        <div class="bg-circle-3 bg-circle"></div>
+    </div>
+    <header class="text-center text-white pulse animated masthead">
+        <div class="masthead-content">
+                <h1 class="masthead-heading mb-0"></h1>
+                <h2 class="masthead-subheading mb-0">Les encheres en cours</h2>
+        </div>
+        <div class="bg-circle-2 bg-circle"></div>
+    </header> 
+    
                <Navbar enchere={idenchere} utilisateur={sessionStorage.getItem('iduser')}/>
+
 
                 { 
                 historique.map((h)=>    <div class="container" >
@@ -62,6 +92,6 @@ export default function Historique () {
                  </div>  
                  </div> 
             </div>
-                 )}</div> 
+                 )}</section></div> 
         )
     }

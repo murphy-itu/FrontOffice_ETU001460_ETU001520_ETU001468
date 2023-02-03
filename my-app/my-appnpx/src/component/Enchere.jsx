@@ -1,5 +1,11 @@
 import { Component } from "react";
 import '../assets/css/Enchere.css';
+import '../assets/assets/css/app.css';
+import '../assets/assets/css/Login-Form-Clean.css';
+import '../assets/assets/bootstrap/css/bootstrap.min.css';
+import '../assets/assets/css/Login-Form-Clean.css';
+import '../assets/assets/css/MUSA_input-helper.css';
+
 import { useHistory } from "react-router-dom";
 class Enchere extends Component {
     constuctor() {
@@ -13,11 +19,12 @@ class Enchere extends Component {
     enchere = this.props.enchere;  
     render() {
         return (
+              
             <div class="container" >
                 <div class="item item-cont" >
                     {
                         this.enchere.photos.map((photo,index) =>
-                            <div class="item-it"><img key={index} src={"data:image/jpeg;base64,"+photo.base64} /></div> 
+                            <div class="item-it"><img key={index} src={""+photo.base64} /></div> 
                         )
                     }
                 </div>
@@ -32,6 +39,8 @@ class Enchere extends Component {
                     </div>
                 </div>
             </div>
+            
+
         )
     }
 }

@@ -7,94 +7,19 @@ import reportWebVitals from './reportWebVitals';
 import Enchere from './component/Enchere'
 import { useState } from 'react';
 import { useEffect } from 'react';
+
+import './assets/css/Enchere.css';
+import './assets/assets/css/app.css';
+import './assets/assets/css/Login-Form-Clean.css';
+import './assets/assets/bootstrap/css/bootstrap.min.css';
+import './assets/assets/css/Login-Form-Clean.css';
+import './assets/assets/css/MUSA_input-helper.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './component/Login';
 import InsertMise from './component/InsertMise';
 import Recherche from './component/Recherche';
 import Historique from './component/Historique';
 import HistoriqueMise from './component/HistoriqueMise';
-
-
-//  enchere = [
-//   {
-//   utilisateur:{
-//     id:1,
-//     nom:"RAKOTO",
-//     prenom:"Jean",
-//     email:"jean@gmail.com",
-//     motdepasse:"12345"  
-//   },
-//   produit:{
-//     id:1,
-//     nom:"Produit 1",
-//     categorie:{
-//       id:1,
-//       nom:"Categorie 1"
-//     }
-//   },
-//   description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-//   prixminimal:130000,
-//   datetime:"2022-01-01 15:00:00",
-//   durree:"05:00:00",
-//   etat:1,
-//   photo:[
-//     {
-//       id:1,
-//       ienchere:1,
-//       base64:"fopajafvtrhhrtbhhhhhhhhhhhhhhhhhhhhh"
-//     },
-//     {
-//       id:2,
-//       ienchere:1,
-//       base64:"kalkaopkpockpaokofpkapok"
-//     },
-//     {
-//       id:3,
-//       ienchere:1,
-//       base64:"kalkaopkpockpaokofpkapok"
-//     },{
-//       id:3,
-//       ienchere:1,
-//       base64:"kalkaopkpockpaokofpkapok"
-//     }
-//   ] ,
-
-// } , 
-// {
-//     utilisateur:{
-//       id:2,
-//       nom:"RASOA",
-//       prenom:"Jeanne",
-//       email:"jeannz@gmail.com",
-//       motdepasse:"12345"  
-//     },
-//     produit:{
-//       id:1,
-//       nom:"Produit 2",
-//       categorie:{
-//         id:1,
-//         nom:"Categorie 2"
-//       }
-//     },
-//     description:" (2) Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-//     prixminimal:300000,
-//     datetime:"2023-01-01 15:00:00",
-//     durree:"01:00:00",
-//     etat:1,
-//     photo:[
-//       {
-//         id:1,
-//         ienchere:1,
-//         base64:"fopajafvtrhhrtbhhhhhhhhhhhhhhhhhhhhh"
-//       },
-//       {
-//         id:2,
-//         ienchere:1,
-//         base64:"kalkaopkpockpaokofpkapok"
-//       }
-//     ] ,
-// }
-// ]
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -104,6 +29,27 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //   </React.StrictMode>
 // );
 
+function Nav(){
+  return(
+    <section>
+    <div class="bg-circle-1 bg-circle">
+        <div class="bg-circle-3 bg-circle"></div>
+    </div>
+    <div class="bg-circle-1 bg-circle">
+                            <div class="bg-circle-3 bg-circle"></div>
+                        </div>
+    <header class="text-center text-white pulse animated masthead">
+        <div class="masthead-content">
+            <div class="container">
+                <h1 class="masthead-heading mb-0"></h1>
+                <h2 >Les encheres en cours</h2>
+            </div>
+        </div>
+        <div class="bg-circle-2 bg-circle"></div>
+    </header> 
+    </section>
+  )
+}
 function GetEnchere() {
   const [enchere,setEnchere] = useState([]);
   useEffect(() => {
@@ -120,10 +66,15 @@ function GetEnchere() {
   });
   }, [])
 
+
+
   return (
+     <Nav/>,<h1>hi</h1>,
   enchere.map((e,index) => {
+   
     return <Enchere key={index} enchere={e} />
   })
+ 
   )
 }
 
