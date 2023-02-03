@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { Component } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Loading } from "./loading";
+import { Loading } from "./loading"; 
 import Navbar from "./Navbar";
+import Fiche from "./Fiche";
 var loading=false;
 
 export default function InsertMise() {
@@ -14,6 +15,7 @@ export default function InsertMise() {
     const [id,setId] =useState("");        
     const [etat,setEtat] =useState("");        
     const { idenchere } = useParams();
+    const [detail,setDetail] = useState([]);
 
     const navigate = useNavigate()
 
@@ -53,9 +55,9 @@ console.log(mise+" - "+sessionStorage.getItem('token'));
                 "utilisateur":{
                     "id":sessionStorage.getItem('iduser')
                 },
-                "enchere":{"id":idenchere},
+                "idenchere":idenchere,
                 "etat":1
-                    })
+                })
          } ) 
          .then((res)=> res.json())
          .then((resultat)=>{
@@ -74,31 +76,21 @@ const DetailsEnchere = () =>{
     /*   log.append("email",this.state.email);
        log.append("motdepasse",this.state.password);
        console.log(log.get("email"));*/
-console.log(mise+" - "+sessionStorage.getItem('token'));
+        console.log(mise+" - "+sessionStorage.getItem('token'));
         console.log(sessionStorage.getItem('iduser'));
-       fetch("http://localhost:8082/Enchere/rencherir/",
+       fetch("http://localhost:8082/Enchere/Enchere/"+3,
        {
-           method:"POST",
+           method:"GET",
            headers:  { 
-               'Accept':'application/json',
-               'Access-Control-Allow-Origin': '*',
-               'Content-Type':'application/json',
-               'token':`${sessionStorage.getItem('token').toString()}`},
-            
-            body: JSON.stringify({
-                "montant":mise,
-                "utilisateur":{
-                    "id":sessionStorage.getItem('iduser')
-                },
-                "enchere":idenchere,
-                "etat":1
-                    })
+            'Accept':'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Content-Type':'application/json',
+            'token':`${sessionStorage.getItem('token').toString()}`}
          } ) 
          .then((res)=> res.json())
          .then((resultat)=>{
-           console.log(resultat+" mandeha"); 
-           setEnchere(resultat);           
-          // setEnchere(resultat.data);
+            console.log(resultat.ficheenchere);
+           setDetail(resultat.ficheenchere);
          });
          }        
 const [enchere,setEnchere] = useState([]);
@@ -129,10 +121,16 @@ const [enchere,setEnchere] = useState([]);
             console.log(sessionStorage.getItem('token'));
             console.log(enchere+" iooo");
             setId(sessionStorage.getItem("iduser"));
-            setEtat(1)
+            setEtat(1);
+            DetailsEnchere();
         },[])
     
         return (<div>
+                {
+                    detail.map((d,index) => {
+                        return (<Fiche key={index} ficheenchere={d}/>)
+                    })
+                }
                 <Navbar enchere={idenchere} utilisateur={sessionStorage.getItem('iduser')}/>
                  <h3>Somme : </h3>
                  <input type="text" value={mise} onChange={(event)=>setMise(event.target.value)} name="email"/>                 
