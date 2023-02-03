@@ -2,6 +2,11 @@ import { useState } from "react";
 import { Component } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Loading } from "./loading";
+import '../assets/assets/bootstrap/css/bootstrap.min.css';
+import '../assets/assets/css/Login-Form-Clean.css';
+import '../assets/assets/css/MUSA_input-helper-1.css';
+import '../assets/assets/css/MUSA_input-helper.css';
+
 var loading=false;
 
 export default function Login() {
@@ -60,11 +65,16 @@ const navigate = useNavigate();
                 loading?(
                     <Loading/>
                 ):(
-                    <div>
-                        <h3> Login </h3>
-                        <input type="text" value={email} onChange={(event)=>setEmail(event.target.value)} name="email"/>
-                        <input type="password" name="password" value={password} onChange={(event)=>setPassword(event.target.value)} />
-                        <button onClick={()=>submit()}>Login</button>
+                    <div class="container">
+                        <div class="item" ></div>
+                        <div class="item" >
+                            <h3> Login </h3>
+                            <input type="text" class="form-control" value={email} onChange={(event)=>setEmail(event.target.value)} name="email"/>
+                            <br />
+                            <input class="form-control" type="password" name="password" value={password} onChange={(event)=>setPassword(event.target.value)} />
+                            <br />
+                            <a onClick={()=>submit()} class="btn btn-primary " >Login</a>
+                        </div>
                     </div>
                 )
             }</>

@@ -50,6 +50,18 @@ function Nav(){
     </section>
   )
 }
+
+function RechercheAvancee () {
+  return (
+    <div>
+    <input type="text" />
+    <input type="text" />
+    <input type="text" />
+    <input type="text" />
+    </div>  
+  )
+}
+
 function GetEnchere() {
   const [enchere,setEnchere] = useState([]);
   useEffect(() => {
@@ -69,11 +81,10 @@ function GetEnchere() {
 
 
   return (
-  enchere.map((e,index) => {
-
-    return <Enchere key={index} enchere={e} />
-  })
- 
+    enchere.map((e,index) => {
+      <input type="text" />
+      return <Enchere key={index} enchere={e} />
+    }) 
   )
 }
 

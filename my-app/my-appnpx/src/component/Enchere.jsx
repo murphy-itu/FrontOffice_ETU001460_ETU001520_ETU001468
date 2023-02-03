@@ -10,23 +10,21 @@ import { Link, useHistory } from "react-router-dom";
 class Enchere extends Component {
     constuctor() {
         this.faireRedirection = this.faireRedirection.bind(this);
-      }
+    }
     
-      faireRedirection() {
-        let url = "maNouvelleURL";
-        this.props.history.push(url);
-
-
-      }
+    faireRedirection() {
+    let url = "maNouvelleURL";
+    this.props.history.push(url);
+    }
     enchere = this.props.enchere;  
     render() {
         return (
               
             <div class="container" >
-                <div class="item item-it" >
+                <div class="item item-cont" >
                     {
                         this.enchere.photos.map((photo,index) =>
-                           <img class="img-fluid" key={index} src={""+photo.base64} />
+                           <div class="item-it" ><img class="img-fluid" key={index} src={""+photo.base64} /></div>
                         )
                     }
                 </div>                
