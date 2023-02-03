@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import Enchere from './component/Enchere'
 import { useState } from 'react';
 import { useEffect } from 'react';
-
+import './assets/css/Enchere.css';
 import './assets/css/Enchere.css';
 import './assets/assets/css/app.css';
 import './assets/assets/css/Login-Form-Clean.css';
