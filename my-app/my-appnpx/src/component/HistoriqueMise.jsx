@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 export default function HistoriqueMise () {
 
     const [historique,setHistorique] =useState([]);
+    
     const { idenchere } = useParams("idenchere");
     const utilisateur = sessionStorage.getItem('iduser');
     const submit = () =>{

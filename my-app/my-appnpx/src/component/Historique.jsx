@@ -9,7 +9,6 @@ import '../assets/assets/css/Login-Form-Clean.css';
 import '../assets/assets/bootstrap/css/bootstrap.min.css';
 import '../assets/assets/css/Login-Form-Clean.css';
 import '../assets/assets/css/MUSA_input-helper.css';
-import '../assets/assets/bootstrap/js/bootstrap.min.js';
 
 export default function Historique () {
 

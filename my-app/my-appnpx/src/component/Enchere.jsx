@@ -6,7 +6,7 @@ import '../assets/assets/bootstrap/css/bootstrap.min.css';
 import '../assets/assets/css/Login-Form-Clean.css';
 import '../assets/assets/css/MUSA_input-helper.css';
 
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 class Enchere extends Component {
     constuctor() {
         this.faireRedirection = this.faireRedirection.bind(this);
@@ -15,6 +15,7 @@ class Enchere extends Component {
       faireRedirection() {
         let url = "maNouvelleURL";
         this.props.history.push(url);
+
 
       }
     enchere = this.props.enchere;  
@@ -36,7 +37,7 @@ class Enchere extends Component {
                         <p>prix minimal : <strong>{this.enchere.prixminimal}</strong> </p>  
                         <p>date : <strong> {this.enchere.datetime} </strong> </p>
                         <p>{this.enchere.description}</p>
-                        <p><a href={"/login/"+this.enchere.id}><button>rencherir</button></a></p>
+                        <p><Link to={"/login/"+this.enchere.id}><button>rencherir</button></Link></p>
                     </div>
                 </div>
             </div>

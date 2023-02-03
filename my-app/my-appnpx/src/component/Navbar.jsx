@@ -7,7 +7,7 @@ import '../assets/assets/css/Login-Form-Clean.css';
 import '../assets/assets/bootstrap/css/bootstrap.min.css';
 import '../assets/assets/css/Login-Form-Clean.css';
 import '../assets/assets/css/MUSA_input-helper.css';
-import '../assets/assets/bootstrap/js/bootstrap.min.js';
+import { Link } from "react-router-dom";
 
 class Navbar extends Component {
     constuctor() {
@@ -30,10 +30,10 @@ class Navbar extends Component {
             <a class="navbar-brand" href="#">GEtit</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarResponsive"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a  class="nav-link"  href="/">Log Out</a></li>
-                        <li class="nav-item"><a  class="nav-link"  href={"/Recherche/"+this.enchere} >Recherche     </a></li>
-                        <li class="nav-item"><a   class="nav-link"   href={"/Historique/"+this.enchere} >Historique     </a></li>
-                        <li class="nav-item"><a  class="nav-link"  href={"/HistoriqueMise/"+this.enchere} >Mes encheres misés    </a></li>
+                        <li class="nav-item"><Link  class="nav-link"  to="/">Log Out</Link></li>
+                        <li class="nav-item"><Link  class="nav-link"  to={"/Recherche/"+this.enchere} >Recherche     </Link></li>
+                        <li class="nav-item"><Link   class="nav-link"   to={"/Historique/"+this.enchere} >Historique     </Link></li>
+                        <li class="nav-item"><Link  class="nav-link"  to={"/HistoriqueMise/"+this.enchere} >Mes encheres misés    </Link></li>
                     </ul>
                 </div>
            

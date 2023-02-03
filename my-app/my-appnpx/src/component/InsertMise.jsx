@@ -61,8 +61,12 @@ console.log(mise+" - "+sessionStorage.getItem('token'));
          } ) 
          .then((res)=> res.json())
          .then((resultat)=>{
-           console.log(resultat+" mandeha"); 
-           setEnchere(resultat);           
+            if(resultat.error){
+                alert(resultat.error.message);
+            } else {
+                console.log(resultat+" mandeha"); 
+                setEnchere(resultat);
+            }           
           // setEnchere(resultat.data);
          });
          }        
