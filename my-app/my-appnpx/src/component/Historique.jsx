@@ -23,7 +23,7 @@ export default function Historique () {
            log.append("motdepasse",this.state.password);
            console.log(log.get("email"));*/
            console.log("hhh");
-           fetch("http://localhost:8082/utilisateur/"+utilisateur+"/historique",
+           fetch("https://encheremrrojog44-production-81c1.up.railway.app/utilisateur/"+utilisateur+"/historique",
            {
             
                method:"GET",

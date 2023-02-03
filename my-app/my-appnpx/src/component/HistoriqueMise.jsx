@@ -14,11 +14,11 @@ export default function HistoriqueMise () {
            log.append("motdepasse",this.state.password);
            console.log(log.get("email"));*/
            console.log("hhh");
-           fetch("http://localhost:8082/Enchere/"+utilisateur+"/details",
+           fetch("https://encheremrrojog44-production-81c1.up.railway.app/Enchere/"+utilisateur+"/details",
            {
             
                method:"GET",
-               headers : { 'Accept':'application/json',
+               headers : { //'Accept':'application/json',
                'Access-Control-Allow-Origin': '*',
                'Content-Type':'application/json',
                'token':`${sessionStorage.getItem('token').toString()}`},

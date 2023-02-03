@@ -18,7 +18,7 @@ class Fiche extends Component {
                         <td>{this.ficheenchere.montant}</td>
                         <td>
                             {
-                                (this.ficheenchere.status == 1)?("en-tête"):("depassé")
+                                (this.ficheenchere.etat == 1)?("en-tête"):("depassé")
                             }
                         </td>
                     </tr>

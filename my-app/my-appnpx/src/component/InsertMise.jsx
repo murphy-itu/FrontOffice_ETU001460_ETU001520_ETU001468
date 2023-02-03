@@ -41,7 +41,7 @@ const insertMise = () =>{
        console.log(log.get("email"));*/
 console.log(mise+" - "+sessionStorage.getItem('token'));
         console.log(sessionStorage.getItem('iduser'));
-       fetch("http://localhost:8082/Enchere/rencherir/",
+       fetch("https://encheremrrojog44-production-81c1.up.railway.app/Enchere/rencherir/",
        {
            method:"POST",
            headers:  { 
@@ -78,7 +78,7 @@ const DetailsEnchere = () =>{
        console.log(log.get("email"));*/
         console.log(mise+" - "+sessionStorage.getItem('token'));
         console.log(sessionStorage.getItem('iduser'));
-       fetch("http://localhost:8082/Enchere/Enchere/"+3,
+       fetch("https://encheremrrojog44-production-81c1.up.railway.app/Enchere/Enchere/"+idenchere,
        {
            method:"GET",
            headers:  { 

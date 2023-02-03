@@ -13,7 +13,7 @@ export default function Recherche () {
            log.append("motdepasse",this.state.password);
            console.log(log.get("email"));*/
    
-           fetch("http://localhost:8082/utilisateur/liste",
+           fetch("https://encheremrrojog44-production-81c1.up.railway.app/utilisateur/liste",
            {
                method:"POST",
                headers : {"Content-Type":"application/json"},

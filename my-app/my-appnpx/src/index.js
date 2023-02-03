@@ -54,7 +54,7 @@ function GetEnchere() {
   const [enchere,setEnchere] = useState([]);
   useEffect(() => {
     
-  fetch("http://localhost:8082/Enchere/Enchere",
+  fetch("https://encheremrrojog44-production-81c1.up.railway.app/Enchere/Enchere",
     {
       method:"GET"
     }  
@@ -69,9 +69,8 @@ function GetEnchere() {
 
 
   return (
-     <Nav/>,<h1>hi</h1>,
   enchere.map((e,index) => {
-   
+
     return <Enchere key={index} enchere={e} />
   })
  

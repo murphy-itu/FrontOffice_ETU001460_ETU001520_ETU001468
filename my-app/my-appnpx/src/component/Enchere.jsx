@@ -22,14 +22,13 @@ class Enchere extends Component {
         return (
               
             <div class="container" >
-                 <div class="item">
-                <div class="item-it" >
+                <div class="item item-it" >
                     {
                         this.enchere.photos.map((photo,index) =>
                            <img class="img-fluid" key={index} src={""+photo.base64} />
                         )
                     }
-                </div>       </div>                
+                </div>                
                 <div class="item" >
                     <div>
                         <h1>{this.enchere.produit.nom}</h1>
